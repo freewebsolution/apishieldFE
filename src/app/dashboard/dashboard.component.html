@@ -1,0 +1,28 @@
+<div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+    <div class="max-w-4xl w-full bg-white p-8 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-semibold text-center text-gray-800 mb-6">Dashboard</h2>
+      
+      <!-- Informazioni utente -->
+      <div class="mb-6" *ngIf="profile">
+        <h3 class="text-xl font-medium text-gray-700">Ciao, {{ profile.name }}</h3>
+        <p class="text-gray-600">Email: {{ profile.email }}</p>
+        <p class="text-gray-600">Codice Fiscale: {{ profile.codice_fiscale }}</p>
+      </div>
+      
+      <!-- Messaggio di caricamento -->
+      <div class="mb-6" *ngIf="!profile">
+        <p class="text-gray-500 text-center">Caricamento profilo...</p>
+      </div>
+      
+      <!-- Sezione logout -->
+      <div class="text-center">
+        <button
+          (click)="logOut()"
+          class="w-full bg-red-500 text-white py-2 px-4 rounded-md shadow hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+  
